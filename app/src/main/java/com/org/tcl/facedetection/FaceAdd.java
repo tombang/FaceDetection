@@ -6,16 +6,16 @@ import java.util.Map;
 public class FaceAdd {
     private static String TAG = "FaceAdd";
     private static String url = "https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add";
-    public static String add() {
+    public static String add(String picture) {
         // 请求url
         try {
             Map<String, Object> map = new HashMap<>();
-            map.put("image", "027d8308a2ec665acb1bdf63e513bcb9");
+            map.put("image", picture);
             map.put("group_id", "group_repeat");
             map.put("user_id", "user1");
             map.put("user_info", "abc");
-            map.put("liveness_control", "NORMAL");
-            map.put("image_type", "FACE_TOKEN");
+            map.put("liveness_control", "LOW");
+            map.put("image_type", "BASE64");
             map.put("quality_control", "LOW");
 
             String param = GsonUtils.toJson(map);

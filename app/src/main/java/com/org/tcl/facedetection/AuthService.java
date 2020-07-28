@@ -1,7 +1,5 @@
 package com.org.tcl.facedetection;
 
-import android.util.Log;
-
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -54,6 +52,7 @@ public class AuthService {
             Logd("result:" + result);
             JSONObject jsonObject = new JSONObject(result);
             String access_token = jsonObject.getString("access_token");
+            Logd("access_token:" + access_token);
             return access_token;
         } catch (Exception e) {
             Logi("获取token失败！");
